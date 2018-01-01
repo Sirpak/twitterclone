@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Chirp</title>
+
+			 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+			 <script src="javascripts/chirpApp.js"></script>
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="stylesheets/style.css">
+
+	</head>
+<body ng-app="chirpApp">
+		<div id='main' class="container" ng-controller="mainController"> <!--we are modifying this div with mainController -->
+			<form ng-Submit="post()">
+				<input type='text' class="form-control" placeholder="Your name" ng-model='newPost.created_by'/> <!-- user name will go here, not a manually entered name -->
+				<textarea required class="form-control" required maxLength='200' row='3' placeholder="Say something" ng-model='newPost.text'> </textarea>
+				<input class='btn submit-btn pullright' type='submit' value='Chirp!' >
+			
+			</form>
+			<div id="post-stream">
+				<h4>Chirp Feed</h4>
+				<div class='post' ng-repeat="post in posts | orderBy: 'created_at': true" ng-class-odd="'odd'" ng-class-even="'even'">
+					<!-- repeats through or iterates through the posts and brings the most recent one by the time stamp to the top -->
+					<p> {{post.text}}</p>
+					<small>Posted by @{{post.created_by}}</small>
+					<small class="pullright">{{post.created_at | date:"h:mma 'on' MMM d, y"}}
+			</div>
+		</div>
+	</div>
+			
+</body>
+</html>
