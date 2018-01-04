@@ -8,11 +8,11 @@ body {
 }
 
 a {
-	color: #00B7FF;
+	color: #CBCBCB;
 }
 
 .submit-btn {
-	background-color: #b1dbff;
+	background-color: #CBCBCB;
 	margin: 10px 0 10px 0;
 }
 
@@ -23,11 +23,11 @@ a {
 }
 
 .odd {
-	background-color: #f2f9ff;
+	background-color: #ECE6F0;
 	
 }
 .even {
-	background-color: #eceff3;
+	background-color: #BEBAC0;
 }
 
 .form-auth {
@@ -35,3 +35,15 @@ a {
 	padding: 5px;
 	margin: 0 auto;
 }
+
+.form-control:focus {
+	border-color: #BEBAC0 !important;
+	box-shadow: 0 0 0 0.2rem rgba(68,68,68,.25) !important;
+}
+
+.submit-btn:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0,0,0,.50) !important;
+}
+}
+
+
